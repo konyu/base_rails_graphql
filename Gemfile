@@ -56,8 +56,7 @@ gem 'graphql-batch'
 # gem "image_processing", "~> 1.2"
 
 group :development, :test do
-  # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
-  gem 'debug', platforms: %i[mri mingw x64_mingw]
+  gem 'debug', '1.7.0', platforms: %i[mri mingw x64_mingw] # 1.7.1にバグが有るため github actions(linux?)上で動かない https://github.com/ruby/debug/issues/852
 end
 
 group :development do

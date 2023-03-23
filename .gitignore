@@ -33,3 +33,6 @@
 
 # Ignore master key for decrypting credentials and more.
 /config/master.key
+
+# ruby/setup-ruby@v1 でのbundle installしたgemの保存先ディレクトリ
+/vendor/bundle
