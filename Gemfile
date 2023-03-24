@@ -48,7 +48,7 @@ gem 'bootsnap', require: false
 gem 'graphiql-rails'
 gem 'graphql'
 gem 'graphql-batch'
-
+gem 'rack-cors'
 # Use Sass to process CSS
 # gem "sassc-rails"
 
