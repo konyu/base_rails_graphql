@@ -1,7 +1,7 @@
 name: GraphQL
 on: [pull_request]
 jobs:
-  graphql:
+  graphql-schema-genaration:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -17,3 +17,15 @@ jobs:
         uses: stefanzweifel/git-auto-commit-action@v4
         with:
           commit_message: Re-Generate GraphQL Schema
+  test-graphql-repo:
+    runs-on: ubuntu-latest
+    needs: [graphql-schema-genaration]
+    steps:
+      - name: sss
+        uses: convictional/trigger-workflow-and-wait@v1.6.1
+        with:
+          owner: konyu
+          repo: graphql_next
+          github_token: ${{ secrets.GRAPHTL_NEXT_TOKEN }}
+          workflow_file_name: trigger.yml
+          propagate_failure: true
